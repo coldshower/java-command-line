@@ -1,0 +1,10 @@
+{
+	"test1.java": null,
+	"test2.txt": null,
+	"testDir": {
+		"insideTestDir": {
+			"superNested": null
+		},
+		"hiThere": null
+	}
+}
