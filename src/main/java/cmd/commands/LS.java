@@ -4,17 +4,27 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
+import cmd.Command;
 
-public class LS {
+public class LS implements Command {
     @Override
     public final void run(String[] args) {
         File path = new File(args[1]);
 
         if (args.length >= 3 && args[2].equals("-json")) {
             Map fileStructure = LS.listAllAndPrintJson(path);
+
+            String jsonResult;
             ObjectMapper objectMapper = new ObjectMapper();
-            String jsonResult = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(fileStructure);
+
+            try {
+                jsonResult = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(fileStructure);
+            } catch (JsonProcessingException e) {
+                jsonResult = e.toString();
+            }
+
             System.out.println(jsonResult);
         } else {
             LS.listAllAndPrint(path);

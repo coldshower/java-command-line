@@ -1,7 +1,7 @@
 package cmd;
 
 import java.io.IOException;
-import cmd.Commands;
+import cmd.Terminal;
 
 public class App {
     public static void main(String[] args) throws IOException {
@@ -9,6 +9,6 @@ public class App {
             throw new IOException("No cmd commands found");
         }
 
-        Commands.get(args[0]).run();
+        Terminal.get(args[0]).run(args);
     }
 }
