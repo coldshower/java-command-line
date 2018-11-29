@@ -11,6 +11,8 @@ class Terminal {
     static {
         map.put("ls", new LS());
         map.put("mkdir", new MKDIR());
+        map.put("pwd", new PWD());
+        map.put("touch", new TOUCH());
     }
 
     static Command get(String command) {
