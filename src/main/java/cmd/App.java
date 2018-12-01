@@ -1,7 +1,6 @@
 package cmd;
 
 import java.io.IOException;
-import cmd.Terminal;
 
 public class App {
     public static void main(String[] args) throws IOException {

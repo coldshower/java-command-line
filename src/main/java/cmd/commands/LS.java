@@ -14,18 +14,7 @@ public class LS implements Command {
         File path = new File(args[1]);
 
         if (args.length >= 3 && args[2].equals("-json")) {
-            Map fileStructure = LS.listAllAndPrintJson(path);
-
-            String jsonResult;
-            ObjectMapper objectMapper = new ObjectMapper();
-
-            try {
-                jsonResult = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(fileStructure);
-            } catch (JsonProcessingException e) {
-                jsonResult = e.toString();
-            }
-
-            System.out.println(jsonResult);
+            LS.listAllAndPrintJson(path);
         } else {
             LS.listAllAndPrint(path);
         }
@@ -39,12 +28,27 @@ public class LS implements Command {
         return files;
     }
 
-    static final Map listAllAndPrintJson(File path) {
+    static final void listAllAndPrintJson(File path) {
+        Map fileStructure = LS.createFileStructureFromPath(path);
+
+        String jsonResult;
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            jsonResult = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(fileStructure);
+        } catch (JsonProcessingException e) {
+            jsonResult = e.toString();
+        }
+
+        System.out.println(jsonResult);
+    }
+
+    static final Map createFileStructureFromPath(File path) {
         Map fileStructure = new HashMap<String, Map>();
         File[] files = path.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
-                Map nestedFileStructure = listAllAndPrintJson(new File(file.getAbsolutePath()));
+                Map nestedFileStructure = createFileStructureFromPath(new File(file.getAbsolutePath()));
                 fileStructure.put(file.getName(), nestedFileStructure);
             } else {
                 fileStructure.put(file.getName(), null);
