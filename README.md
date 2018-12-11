@@ -10,36 +10,35 @@ java -jar target/cmd-1.jar ls .
 
 # Commands
 
-#### ls
+### ls
 
 Lists all the files and directories at the given path
 
-`ls [pathname] [-json]
+`ls [pathname] [-json]`
 
 `-json` will print the output in JSON format
 
 #### Example: `ls ./testDir -json`
 
-## pwd [pathname]
+### pwd
 
 Prints the absolute version of the given path
 
-```
-Example: pwd ../../..
-```
+`pwd [pathname]`
 
-## mkdir [pathname]
+#### Example: 
+`pwd ../../..`
+
+### mkdir
 
 Creates a directory at the given path
 
-```
-Example: mkdir ../siblingOfParent
-```
+#### Example: 
+`mkdir ../siblingOfParent`
 
-## touch [pathname]
+### touch
 
 Creates a file at the given path
 
-```
-Example: touch newFile.txt
-```
+#### Example: 
+`touch newFile.txt`
