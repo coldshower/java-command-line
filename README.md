@@ -10,7 +10,7 @@ java -jar target/cmd-1.jar ls .
 
 # Commands
 
-### ls
+## ls
 
 Lists all the files and directories at the given path
 
@@ -20,7 +20,7 @@ Lists all the files and directories at the given path
 
 #### Example: `ls ./testDir -json`
 
-### pwd
+## pwd
 
 Prints the absolute version of the given path
 
@@ -29,14 +29,14 @@ Prints the absolute version of the given path
 #### Example: 
 `pwd ../../..`
 
-### mkdir
+## mkdir
 
 Creates a directory at the given path
 
 #### Example: 
 `mkdir ../siblingOfParent`
 
-### touch
+## touch
 
 Creates a file at the given path
 
