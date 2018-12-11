@@ -52,5 +52,6 @@ Creates a file at the given path
 
 ```
 # Example: 
+
 touch newFile.txt
 ```
