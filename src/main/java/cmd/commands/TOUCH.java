@@ -7,14 +7,10 @@ import cmd.Command;
 
 public class TOUCH implements Command {
     @Override
-    public void run(String[] args) {
+    public void run(String[] args) throws IOException {
         File path = new File(args[1]);
 
-        try {
-            path.createNewFile();
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+        path.createNewFile();
 
     }
 }
