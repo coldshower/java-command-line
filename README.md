@@ -3,23 +3,22 @@
 1. `mvn clean package`
 2. `java -jar target/cmd-1.jar [INSERT CMD COMMANDS HERE]`
 
-## Example
+#### Example
 ```
 java -jar target/cmd-1.jar ls .
 ```
 
 # Commands
 
-## ls [pathname] [-json]
+#### ls
 
 Lists all the files and directories at the given path
 
-```
-Example: ls ./testDir -json
-```
+`ls [pathname] [-json]
 
 `-json` will print the output in JSON format
 
+#### Example: `ls ./testDir -json`
 
 ## pwd [pathname]
 
