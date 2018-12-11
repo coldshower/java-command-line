@@ -40,6 +40,8 @@ pwd ../../..
 
 Creates a directory at the given path
 
+`mkdir [pathname]`
+
 ```
 # Example:
 
@@ -49,6 +51,8 @@ mkdir ../siblingOfParent
 ## touch
 
 Creates a file at the given path
+
+`touch [pathname]`
 
 ```
 # Example: 
