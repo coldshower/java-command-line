@@ -18,7 +18,11 @@ Lists all the files and directories at the given path
 
 `-json` will print the output in JSON format
 
-#### Example: `ls ./testDir -json`
+```
+# Example:
+
+ls ./testDir -json
+```
 
 ## pwd
 
@@ -26,19 +30,27 @@ Prints the absolute version of the given path
 
 `pwd [pathname]`
 
-#### Example: 
-`pwd ../../..`
+```
+# Example:
+
+pwd ../../..
+```
 
 ## mkdir
 
 Creates a directory at the given path
 
-#### Example: 
-`mkdir ../siblingOfParent`
+```
+# Example:
+
+mkdir ../siblingOfParent
+```
 
 ## touch
 
 Creates a file at the given path
 
-#### Example: 
-`touch newFile.txt`
+```
+# Example: 
+touch newFile.txt
+```
