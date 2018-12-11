@@ -5,7 +5,7 @@
 
 #### Example
 ```
-java -jar target/cmd-1.jar ls .
+java -jar target/cmd-1.jar ls . -json
 ```
 
 # Commands
