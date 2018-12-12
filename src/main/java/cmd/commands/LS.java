@@ -48,7 +48,7 @@ public class LS implements Command {
         File[] files = path.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
-                Map nestedFileStructure = createFileStructureFromPath(new File(file.getAbsolutePath()));
+                Map nestedFileStructure = createFileStructureFromPath(file);
                 fileStructure.put(file.getName(), nestedFileStructure);
             } else {
                 fileStructure.put(file.getName(), null);
